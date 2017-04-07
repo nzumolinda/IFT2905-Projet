@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Toast;
 
-import com.example.francoisluc.ift2905_projet.Database.Station;
+import com.example.francoisluc.ift2905_projet.Database.StationsTableElement;
 import com.example.francoisluc.ift2905_projet.Database.StationsDB;
 
 /**
@@ -32,7 +32,7 @@ public class FavoritesActivity extends AppCompatActivity {
         //
         //This is a test
         //
-        Station st  = new Station(2);
+        StationsTableElement st  = new StationsTableElement(2);
         //Open database
         db = new StationsDB(this);
         db.open();

@@ -38,9 +38,9 @@ public class StationsDB {
         return db;
     }
 
-    public long insertStation (Station station){
+    public long insertStation (StationsTableElement stationsTableElement){
         ContentValues values = new ContentValues();
-        values.put(COL_ID, station.getId());
+        values.put(COL_ID, stationsTableElement.getId());
         return db.insert(TABLE_STATIONS, null, values);
     }
 
