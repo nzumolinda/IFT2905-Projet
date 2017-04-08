@@ -24,7 +24,7 @@
     <ListView
         android:id="@+id/favorite_list_view"
         android:layout_width="match_parent"
-        android:layout_height="511dp"
+        android:layout_height="510dp"
         app:layout_anchorGravity="fill_vertical"
         android:layout_gravity="bottom"></ListView>
 
