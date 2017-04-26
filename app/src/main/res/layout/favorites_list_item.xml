@@ -22,7 +22,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout_toStartOf="@+id/imageButton5"
+                tools:layout_toStartOf="@+id/delete_button"
                 android:layout_below="@+id/stationName">
 
                 <TextView
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/stationName"
-                tools:layout_toStartOf="@+id/imageButton5"
+                tools:layout_toStartOf="@+id/delete_button"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="8dp"
@@ -80,14 +80,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_clear_black_24px"
-                android:id="@+id/imageButton5"
+                android:id="@+id/delete_button"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
                 android:foregroundGravity="fill"
                 android:minHeight="40dp"
                 android:minWidth="40dp"
                 android:layout_marginRight="8dp"
-                android:background="#fafafa" />
+                android:background="#fafafa"
+                android:focusable="false"/>
         </RelativeLayout>
 
     </FrameLayout>
