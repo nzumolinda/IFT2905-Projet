@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/starttextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="@string/start_tooltip" />
+
+    <EditText
+        android:id="@+id/desttextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="@string/dest_tooltip" />
+
+    <Button
+        android:id="@+id/itinerarybutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/itinerary_button" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/itinerarymapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
