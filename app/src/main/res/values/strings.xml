@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">BIXI</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="docks_button">Locate</string>
+    <string name="docks_tooltip">Enter address here</string>
+
+    <string name="bixi_button">Locate</string>
+    <string name="bixi_tooltip">Enter address here</string>
+
+    <string name="itinerary_tab">ITIN</string>
+    <string name="itinerary_button">Draw</string>
+    <string name="start_tooltip">Enter starting position here</string>
+    <string name="dest_tooltip">Enter destination here</string>
+
 </resources>
