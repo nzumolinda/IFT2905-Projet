@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,12 +24,14 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private StationsDB db;
     private ListView listView;
+    private FavoritesAdapter adapter;
+    private ArrayList<Station> favorite_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
-
+        Log.i("i","favorite");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarFav);
         setSupportActionBar(toolbar);
 
@@ -35,14 +40,39 @@ public class FavoritesActivity extends AppCompatActivity {
 
         //Create database
         db = new StationsDB(this);
+
+        ////////TEST : add stations in favorite database
+        db.open();
+        db.insertStation(new StationsTableElement(1));
+        db.insertStation(new StationsTableElement(3));
+        db.close();
+        ////////////////////
+
         //Create ListView
         listView = (ListView) findViewById(R.id.favorite_list_view);
+
         //Get favorites from database
-        ArrayList<Station> favorite_list = getFavoritesList() ;
+        favorite_list = getFavoritesList() ;
 
-        FavoritesAdapter adapter = new FavoritesAdapter(this, favorite_list);
+        adapter = new FavoritesAdapter(this, favorite_list);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("i","onItemClick");
+                Station s = favorite_list.get(position);
+                db.open();
+                db.removeStation(s.getId());
+                db.close();
+                remakeList();
+            }
+        });
+    }
 
+    private void remakeList(){
+        favorite_list = getFavoritesList() ;
+        adapter.setData(favorite_list);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -56,6 +86,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
         ArrayList<Station> stationList = new ArrayList<Station>();
         db.open();
+
         Cursor c = db.getStations();
 
         if(c.getCount() != 0){
@@ -65,7 +96,6 @@ public class FavoritesActivity extends AppCompatActivity {
                 stationList.add(st);
             }
         }
-
         db.close();
         return stationList;
     }
