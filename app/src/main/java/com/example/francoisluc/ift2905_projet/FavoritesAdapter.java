@@ -70,9 +70,9 @@ public class FavoritesAdapter extends BaseAdapter {
         });
 
 
-        stationName.setText("" + s.getId());
-        //nbBixis.setText(s.getNbBixis());
-        //nbDocks.setText(s.getNbDocks());
+        stationName.setText(s.getName());
+        nbBixis.setText("" + s.getNbBixis());
+        nbDocks.setText("" + s.getNbDocks());
 
         return rowView;
     }

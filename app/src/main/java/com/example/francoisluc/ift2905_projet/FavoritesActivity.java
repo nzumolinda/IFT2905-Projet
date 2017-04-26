@@ -23,6 +23,7 @@ import java.util.ArrayList;
 public class FavoritesActivity extends AppCompatActivity {
 
     private StationsDB db;
+    private JsonHelper json;
     private ListView listView;
     private FavoritesAdapter adapter;
     private ArrayList<Station> favorite_list;
@@ -40,12 +41,13 @@ public class FavoritesActivity extends AppCompatActivity {
 
         //Create database
         db = new StationsDB(this);
+        json = new JsonHelper("https://secure.bixi.com/data/stations.json");
 
         ////////TEST : add stations in favorite database
-        db.open();
-        db.insertStation(new StationsTableElement(1));
-        db.insertStation(new StationsTableElement(3));
-        db.close();
+       // db.open();
+       // db.insertStation(new StationsTableElement(1));
+        //db.insertStation(new StationsTableElement(3));
+        //db.close();
         ////////////////////
 
         //Create ListView
@@ -92,8 +94,16 @@ public class FavoritesActivity extends AppCompatActivity {
         if(c.getCount() != 0){
             while(c.moveToNext()) {
                 int id = c.getInt(0);
-                Station st = new Station(id);
-                stationList.add(st);
+                //Station st = new Station(id); inutile pour ancien test
+                ArrayList<Station> stArray = json.getStationById(id);
+                if(stArray != null){
+                    Station st = stArray.get(0);
+                    stationList.add(st);
+                    Log.i("info", "station"  + st.getId() + "add to listview");
+                }
+                else
+                    Log.i("info", "station list vide");
+
             }
         }
         db.close();
