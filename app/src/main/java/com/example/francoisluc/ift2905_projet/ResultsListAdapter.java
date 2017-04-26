@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,17 +13,17 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Rosalie on 2017-04-07.
+ * Created by Rosalie on 2017-04-26.
  */
 
-public class FavoritesAdapter extends BaseAdapter {
+public class ResultsListAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater myInflater;
     private ArrayList<Station> dataSource;
 
 
-    public FavoritesAdapter(Context c, ArrayList<Station> data){
+    public ResultsListAdapter(Context c, ArrayList<Station> data){
         context = c;
         dataSource = data;
         myInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -52,7 +51,7 @@ public class FavoritesAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
 
-        View rowView = myInflater.inflate(R.layout.favorites_list_item, parent, false);
+        View rowView = myInflater.inflate(R.layout.results_list_item, parent, false);
 
         final Station s = (Station) getItem(position);
 
@@ -64,7 +63,7 @@ public class FavoritesAdapter extends BaseAdapter {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("i","delete click");
+                Log.i("i","add click");
                 ((ListView) parent).performItemClick(v, position, 0);
             }
         });
