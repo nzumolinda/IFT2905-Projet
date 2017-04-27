@@ -27,7 +27,6 @@
             android:id="@+id/dockslistbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/docks_list_button"
             app:srcCompat="@drawable/ic_list_black_24px" />
 
     </LinearLayout>
