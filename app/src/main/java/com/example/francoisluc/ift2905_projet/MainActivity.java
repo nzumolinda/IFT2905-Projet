@@ -18,7 +18,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 
+import com.example.francoisluc.ift2905_projet.Database.StationsDB;
+
 public class MainActivity extends AppCompatActivity {
+
+    private StationsDB database;
     TabLayout mainhost;
     ViewPager pager;
     PagerAdapter pagerAdapter;
@@ -30,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Create database
+        database = new StationsDB(this);
 
         mainhost = (TabLayout) findViewById(R.id.tab_layout);
         pager = (ViewPager)findViewById(R.id.pager);
@@ -74,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
@@ -83,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.Favorite:
-                // Comportement du bouton "A Propos"
                 Intent intent = new Intent(getApplicationContext(), FavoritesActivity.class);
                 startActivity(intent);
                 return true;
