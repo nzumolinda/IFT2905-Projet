@@ -3,9 +3,11 @@
     <string name="title_activity_main">MainActivity</string>
 
     <string name="docks_button">Locate</string>
+    <string name="docks_list_button">Show as list</string>
     <string name="docks_tooltip">Enter address here</string>
 
     <string name="bixi_button">Locate</string>
+    <string name="bixi_list_button">Show as list</string>
     <string name="bixi_tooltip">Enter address here</string>
 
     <string name="itinerary_tab">ITIN</string>

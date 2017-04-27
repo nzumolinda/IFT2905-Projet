@@ -25,6 +25,12 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/bixilistbutton"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bixi_list_button" />
+
     <com.google.android.gms.maps.MapView
         android:id="@+id/biximapView"
         android:layout_width="match_parent"

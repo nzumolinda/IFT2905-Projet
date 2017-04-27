@@ -22,7 +22,11 @@
             android:text="@string/docks_button" />
 
     </LinearLayout>
-
+    <Button
+        android:id="@+id/dockslistbutton"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:text="@string/docks_list_button" />
     <com.google.android.gms.maps.MapView
         android:id="@+id/docksmapView"
         android:layout_width="match_parent"
