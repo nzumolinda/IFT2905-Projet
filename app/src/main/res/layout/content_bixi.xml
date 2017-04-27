@@ -17,24 +17,34 @@
             android:inputType="textPostalAddress"
             android:hint="@string/bixi_tooltip" />
 
-        <Button
+        <ImageButton
             android:id="@+id/bixibutton"
-            android:layout_width="135dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bixi_button" />
+            app:srcCompat="@drawable/ic_search_black_24px" />
+
+        <ImageButton
+            android:id="@+id/bixilistbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_list_black_24px" />
+
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/bixilistbutton"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:text="@string/bixi_list_button" />
+
+    <ListView
+        android:id="@+id/bixilistView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/biximapView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
+
+
 
 </LinearLayout>

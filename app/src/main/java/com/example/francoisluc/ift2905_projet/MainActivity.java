@@ -2,9 +2,6 @@ package com.example.francoisluc.ift2905_projet;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,23 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TabHost;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import com.example.francoisluc.ift2905_projet.Database.StationsDB;
+import com.google.android.gms.maps.MapView;
 
 public class MainActivity extends AppCompatActivity {
 
     private StationsDB database;
-    TabLayout mainhost;
-    ViewPager pager;
-    PagerAdapter pagerAdapter;
-    EditText bixiLocation, docksLocation, itinStartLocation, itinDestLocation;
-    Button bixiLocate, bixiList, docksLocate, docksList, itinerary;
+    private TabLayout mainhost;
+    private ViewPager pager;
+    private PagerAdapter pagerAdapter;
     public final int NB_TABS = 3;
 
     @Override
@@ -54,18 +47,6 @@ public class MainActivity extends AppCompatActivity {
         mainhost.getTabAt(1).setIcon(R.drawable.ic_docks_30px);
         mainhost.getTabAt(2).setIcon(R.drawable.ic_road_with_two_placeholders);
 
-        bixiLocation = (EditText) findViewById(R.id.bixilocationtextView);
-        bixiLocate = (Button) findViewById(R.id.bixibutton);
-        bixiList = (Button) findViewById(R.id.bixilistbutton);
-
-        docksLocation = (EditText) findViewById(R.id.dockslocationtextView);
-        docksLocate = (Button) findViewById(R.id.docksbutton);
-        docksList = (Button) findViewById(R.id.dockslistbutton);
-
-        itinStartLocation = (EditText) findViewById(R.id.starttextView);
-        itinDestLocation = (EditText) findViewById(R.id.desttextView);
-        itinerary = (Button) findViewById(R.id.itinerarybutton);
-
 
     }
 
@@ -77,11 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position){
-            SimpleFragment fragment = new SimpleFragment();
-            Bundle args =new Bundle();
-            args.putInt("id",position);
-            fragment.setArguments(args);
-            return fragment;
+            switch(position) {
+                case 0:return new BixiFragment();
+                case 1:return new DocksFragment();
+                case 2:return new ItineraryFragment();
+                default:return null;
+            }
         }
 
         @Override
