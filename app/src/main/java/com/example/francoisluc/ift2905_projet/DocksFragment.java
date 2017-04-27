@@ -40,7 +40,7 @@ public class DocksFragment extends Fragment {
         docksList = (ListView) container.findViewById(R.id.dockslistView);
         showingDocksMap=true;
 
-       docksListButton.setOnClickListener(new View.OnClickListener() {
+    /*   docksListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(showingDocksMap)
@@ -55,7 +55,7 @@ public class DocksFragment extends Fragment {
                 }
                 showingDocksMap=!showingDocksMap;
             }
-        });
+        });*/
 
         return v;
     }

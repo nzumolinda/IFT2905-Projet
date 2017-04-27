@@ -40,6 +40,9 @@ public class BixiFragment extends Fragment {
         bixiList = (ListView) container.findViewById(R.id.bixilistView);
         showingBixiMap=true;
 
+       // bixiLocate.setImageResource(R.drawable.ic_search_black_24px);
+       // bixiListButton.setImageResource(R.drawable.ic_list_black_24px);
+
        /* bixiListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
