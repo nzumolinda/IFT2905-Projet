@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.15"
+        android:paddingBottom="4dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp"
+        android:layout_height="90dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_toStartOf="@+id/delete_button"
+                android:layout_below="@+id/stationName">
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nbDocks"
+                    android:layout_toEndOf="@+id/iconDock" />
+
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nbBixis"
+                    android:layout_toRightOf="@+id/iconBixi"
+                    android:layout_alignParentTop="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_docks_30px"
+                    android:id="@+id/iconDock"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/nbBixis"
+                    android:paddingLeft="0dp"
+                    android:layout_marginLeft="36dp"
+                    android:minWidth="30dp"
+                    android:minHeight="40dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_bicycle_pictogram"
+                    android:id="@+id/iconBixi"
+                    android:layout_centerHorizontal="false"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:minHeight="40dp"
+                    android:minWidth="30dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:text="Station Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/stationName"
+                tools:layout_toStartOf="@+id/delete_button"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                tools:textSize="18sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_clear_black_24px"
+                android:id="@+id/delete_button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:foregroundGravity="fill"
+                android:minHeight="40dp"
+                android:minWidth="40dp"
+                android:layout_marginRight="8dp"
+                android:background="#fafafa"
+                android:focusable="false"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
