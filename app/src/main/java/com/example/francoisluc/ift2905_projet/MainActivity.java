@@ -15,8 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import com.example.francoisluc.ift2905_projet.Database.StationsDB;
 
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     TabLayout mainhost;
     ViewPager pager;
     PagerAdapter pagerAdapter;
+    EditText bixiLocation, docksLocation, itinStartLocation, itinDestLocation;
+    Button bixiLocate, bixiList, docksLocate, docksList, itinerary;
     public final int NB_TABS = 3;
 
     @Override
@@ -49,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
         mainhost.getTabAt(1).setIcon(R.drawable.ic_docks_30px);
         mainhost.getTabAt(2).setText(R.string.itinerary_tab);
 
+        bixiLocation = (EditText) findViewById(R.id.bixilocationtextView);
+        bixiLocate = (Button) findViewById(R.id.bixibutton);
+        bixiList = (Button) findViewById(R.id.bixilistbutton);
+
+        docksLocation = (EditText) findViewById(R.id.dockslocationtextView);
+        docksLocate = (Button) findViewById(R.id.docksbutton);
+        docksList = (Button) findViewById(R.id.dockslistbutton);
+
+        itinStartLocation = (EditText) findViewById(R.id.starttextView);
+        itinDestLocation = (EditText) findViewById(R.id.desttextView);
+        itinerary = (Button) findViewById(R.id.itinerarybutton);
 
 
     }

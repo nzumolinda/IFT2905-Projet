@@ -19,11 +19,18 @@ public class SimpleFragment extends Fragment {
         int fragmentId = args.getInt("id");
         View v = null;
         switch(fragmentId) {
-            case 0:v=inflater.inflate(R.layout.content_bixi, container, false);break;
-            case 1:v=inflater.inflate(R.layout.content_docks, container, false);break;
-            case 2:v=inflater.inflate(R.layout.content_itinerary, container, false);break;
+            case 0:
+                v=inflater.inflate(R.layout.content_bixi, container, false);
+                break;
+            case 1:
+                v=inflater.inflate(R.layout.content_docks, container, false);
+                break;
+            case 2:
+                v=inflater.inflate(R.layout.content_itinerary, container, false);
+                break;
             default:break;
         }
+
         return v;
     }
 }
