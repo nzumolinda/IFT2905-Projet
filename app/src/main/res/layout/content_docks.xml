@@ -21,12 +21,14 @@
             android:id="@+id/docksbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/docks_button"
             app:srcCompat="@drawable/ic_search_black_24px" />
 
         <ImageButton
             android:id="@+id/dockslistbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/docks_list_button"
             app:srcCompat="@drawable/ic_list_black_24px" />
 
     </LinearLayout>

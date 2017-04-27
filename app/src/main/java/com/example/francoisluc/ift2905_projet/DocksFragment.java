@@ -24,6 +24,11 @@ public class DocksFragment extends Fragment {
     ListView docksList;
     boolean showingDocksMap;
 
+    public DocksFragment()
+    {
+        super();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

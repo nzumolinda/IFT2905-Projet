@@ -24,6 +24,11 @@ public class BixiFragment extends Fragment {
     ListView bixiList;
     boolean showingBixiMap;
 
+    public BixiFragment()
+    {
+        super();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

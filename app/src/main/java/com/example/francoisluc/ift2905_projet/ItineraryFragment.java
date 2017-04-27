@@ -21,6 +21,11 @@ public class ItineraryFragment extends Fragment {
     ImageButton itinerary;
     MapView itineraryMapView;
 
+    public ItineraryFragment()
+    {
+        super();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,6 +34,7 @@ public class ItineraryFragment extends Fragment {
         itinStartLocation = (EditText) container.findViewById(R.id.starttextView);
         itinDestLocation = (EditText) container.findViewById(R.id.desttextView);
         itinerary = (ImageButton) container.findViewById(R.id.itinerarybutton);
+        itineraryMapView = (MapView) container.findViewById(R.id.itinerarymapView);
         return v;
     }
 }
