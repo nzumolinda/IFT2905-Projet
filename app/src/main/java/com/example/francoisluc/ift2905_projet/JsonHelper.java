@@ -18,9 +18,8 @@ import java.util.concurrent.ExecutionException;
 
 public class JsonHelper {
 
-    //private String jsonStr;
     private String source;
-    private ArrayList<Station> stationList;
+
 
     public JsonHelper(String url){
         this.source = url;
@@ -35,40 +34,6 @@ public class JsonHelper {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-       /*
-        HttpHandler sh = new HttpHandler();
-        String jsonStr = sh.makeServiceCall(source);
-        ArrayList<Station> result = new ArrayList<Station>();
-        if(jsonStr != null){
-            try {
-                JSONObject fullJSON = new JSONObject(jsonStr);
-                JSONArray jsonStationArray = fullJSON.getJSONArray("stations");
-
-                for(int i = 0; i < jsonStationArray.length(); i++){
-                    JSONObject stationI = jsonStationArray.getJSONObject(i);
-                    if(stationI.getInt("id") == id ){
-                        Log.i("info", "station find");
-                        int sId = stationI.getInt("id");
-                        String sName = stationI.getString("s");
-                        int sStatus = stationI.getInt("st");
-                        int sLat = stationI.getInt("la");
-                        int sLon = stationI.getInt("lo");
-                        int sNbBixi = stationI.getInt("ba");
-                        int sNbDock = stationI.getInt("da");
-
-                        Station s = new Station(sId, sName, sStatus, sLat, sLon, sNbBixi, sNbDock);
-                        Log.i("info", "station " + s.getName());
-                        result.add(s);
-                        break;
-                    }
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        else
-            Log.i("info", "json null");
-      */
         return res;
     }
 
