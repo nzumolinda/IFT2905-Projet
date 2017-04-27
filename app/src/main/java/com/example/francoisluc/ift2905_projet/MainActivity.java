@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainhost.getTabAt(0).setIcon(R.drawable.ic_bicycle_pictogram);
         mainhost.getTabAt(1).setIcon(R.drawable.ic_docks_30px);
-        mainhost.getTabAt(2).setText(R.string.itinerary_tab);
+        mainhost.getTabAt(2).setIcon(R.drawable.ic_road_with_two_placeholders);
 
         bixiLocation = (EditText) findViewById(R.id.bixilocationtextView);
         bixiLocate = (Button) findViewById(R.id.bixibutton);
